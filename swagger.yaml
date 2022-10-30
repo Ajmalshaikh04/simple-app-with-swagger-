@@ -17,7 +17,7 @@ components:
       type: http
       scheme: basic
     BearerAuth:
-      type: http
+      type: http   
       scheme: bearer
 
 paths:

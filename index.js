@@ -9,13 +9,11 @@ const swaggerDocument = YAML.load('./swagger.yaml');
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-const PORT = process.env.PORT ||4000 ;
+const PORT = process.env.PORT || 4000;
 
 app.get("/", (req, res) => {
   res.status(200).send("<h1>Hello World!</h1>");
 });
-
-
 
 
 app.get("/api/v1/instagram", (req, res) => {
@@ -46,10 +44,10 @@ app.get("/api/v1/linkedin", (req, res) => {
   res.status(200).json(linkedSocial);
 });
 
-app.get("/api/v1/:token",(req,res)=>{
+app.get("/api/v1/:token", (req, res) => {
   console.log(req.params.token);
   res.status(200).json({
-    param:req.params.token
+    param: req.params.token
   })
 })
 
